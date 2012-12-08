@@ -18,39 +18,41 @@ Usage
 1. Copy the whole `com.thuytrinh.multitouchlistener` package to your `src` folder.
 2. Create a parent `View` having `splitMotionEvents` enabled for all the child `View`s you want to apply the `MultiTouchListener`.
 
-        <RelativeLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+    ```xml
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="true"
+        tools:context=".MainActivity" >
+
+        <ImageView
+            android:id="@+id/imageview_background"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:splitMotionEvents="true"
-            tools:context=".MainActivity" >
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="#FFD4B081" />
 
-            <ImageView
-                android:id="@+id/imageview_background"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:background="#FFD4B081" />
+        <com.thuytrinh.multitouchdemo.TouchView
+            android:id="@+id/touchview_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/daffodils" />
 
-            <com.thuytrinh.multitouchdemo.TouchView
-                android:id="@+id/touchview_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/daffodils" />
-
-            <com.thuytrinh.multitouchdemo.TouchView
-                android:id="@+id/touchview_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/green" />
+        <com.thuytrinh.multitouchdemo.TouchView
+            android:id="@+id/touchview_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/green" />
     
-        </RelativeLayout>
+    </RelativeLayout>
+    ```
 
 3. Instantiate a new `MultiTouchListener` for the `OnTouchListener` of the `View`.
 
