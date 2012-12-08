@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="true"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageview_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#FFD4B081" />
+
+    <com.thuytrinh.multitouchdemo.TouchView
+        android:id="@+id/touchview_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/daffodils" />
+
+    <com.thuytrinh.multitouchdemo.TouchView
+        android:id="@+id/touchview_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/green" />
+
+    <com.thuytrinh.multitouchdemo.TouchView
+        android:id="@+id/touchview_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/hawaii" />
+
+    <com.thuytrinh.multitouchdemo.TouchView
+        android:id="@+id/touchview_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/sunset" />
+
+</RelativeLayout>
