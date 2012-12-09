@@ -67,6 +67,7 @@ Developed By
 ------------
 
 * Thuy Trinh - thuy.ngtrinh@gmail.com
+* For full information and updates, check out my blog at [MultiTouchListener](http://trinhngocthuy.wordpress.com/2012/12/09/multitouchlistener-for-android/).
 
 License
 -------
