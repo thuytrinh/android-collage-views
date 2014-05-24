@@ -1,4 +1,4 @@
-MultiTouchListener
+android-collage-views
 ==================
 
 Introduction
@@ -62,26 +62,3 @@ Usage
     ```
 
 4. By default, translating, scaling, and rotating are enabled. However, if you want a `View` not to be scaled but translated or rotated only, toggling `isScaleEnabled`, `isTranslateEnabled`, `isRotateEnabled` appropriately will do the trick.
-
-Developed By
-------------
-
-* Thuy Trinh - thuy.ngtrinh@gmail.com
-* For full information and updates, check out my blog at [MultiTouchListener](http://trinhngocthuy.wordpress.com/2012/12/09/multitouchlistener-for-android/).
-
-License
--------
-
-    Copyright 2012 Thuy Trinh
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
