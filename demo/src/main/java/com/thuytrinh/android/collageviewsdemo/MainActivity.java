@@ -1,12 +1,12 @@
-package com.thuytrinh.multitouchdemo;
+package com.thuytrinh.android.collageviewsdemo;
 
-import com.thuytrinh.multitouchlistener.MultiTouchListener;
-
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.app.Activity;
+
+import com.thuytrinh.android.collageviews.MultiTouchListener;
 
 public class MainActivity extends Activity {
 

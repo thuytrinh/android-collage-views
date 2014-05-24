@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.thuytrinh.multitouchlistener;
+package com.thuytrinh.android.collageviews;
 
 import android.util.Log;
 import android.view.MotionEvent;

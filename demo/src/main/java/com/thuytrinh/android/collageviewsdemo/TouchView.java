@@ -1,4 +1,4 @@
-package com.thuytrinh.multitouchdemo;
+package com.thuytrinh.android.collageviewsdemo;
 
 import android.content.Context;
 import android.graphics.Canvas;
