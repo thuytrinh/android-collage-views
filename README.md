@@ -7,6 +7,8 @@ Introduction
 "A video is worth a million words"
 [Watch the demo here](http://youtu.be/yHmA-bMqBRI)
 
+*(Note: Work only with API 11+)*
+
 Usage
 -----
 
