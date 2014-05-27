@@ -4,7 +4,8 @@ android-collage-views
 Introduction
 ------------
 
-*// TODO*
+"A video is worth a million words"
+[Watch the demo here](http://youtu.be/yHmA-bMqBRI)
 
 Usage
 -----
