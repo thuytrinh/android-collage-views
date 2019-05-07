@@ -10,6 +10,9 @@ public class MultiTouchListener implements OnTouchListener {
     public boolean isRotateEnabled = true;
     public boolean isTranslateEnabled = true;
     public boolean isScaleEnabled = true;
+    public static boolean isTranslatableX = true;
+    public static boolean isTranslatableY = true;
+    public static boolean canCrossParentBoundries = true;
     public float minimumScale = 0.5f;
     public float maximumScale = 10.0f;
     private int mActivePointerId = INVALID_POINTER_ID;
@@ -48,10 +51,56 @@ public class MultiTouchListener implements OnTouchListener {
     private static void adjustTranslation(View view, float deltaX, float deltaY) {
         float[] deltaVector = {deltaX, deltaY};
         view.getMatrix().mapVectors(deltaVector);
-        view.setTranslationX(view.getTranslationX() + deltaVector[0]);
-        view.setTranslationY(view.getTranslationY() + deltaVector[1]);
+        float transX = view.getTranslationX() + deltaVector[0];
+        float transY = view.getTranslationY() + deltaVector[1];
+        //checks if the view is allowed to translate in X or Y direction
+        // and if the view has reached the boundries of its parent
+        if(isTranslatableX && !hasReachedEdgeX(view, transX)){
+        	view.setTranslationX(transX);
+        }
+        if(isTranslatableY && !hasReachedEdgeY(view, transY)){
+        	view.setTranslationY(transY);
+        }
     }
-
+    
+    private static boolean hasReachedEdgeX(View v, float newTransX){
+    	if(canCrossParentBoundries){
+    		return false;
+    	}
+    	Boolean reachedEdge = true;
+    	int viewRight = v.getRight();
+    	int viewLeft = v.getLeft();
+    	View p = (View) v.getParent();
+    	int pRight = p.getRight();
+    	int pLeft = p.getLeft();
+    	float newViewRight = viewRight + newTransX;
+    	float newViewLeft = viewLeft + newTransX;
+    	//checks if the view has reached the boundaries of its parent
+    	if((newViewLeft > pLeft) && (newViewRight < pRight)){
+    		reachedEdge = false;
+    	}
+		return reachedEdge;
+    }
+    
+    private static boolean hasReachedEdgeY(View v, float newTransY){
+    	if(canCrossParentBoundries){
+    		return false;
+    	}
+    	Boolean reachedEdge = true;
+    	int viewTop = v.getTop();
+    	int viewBottom = v.getBottom();
+    	View p = (View) v.getParent();
+    	int parentTop = p.getTop();
+    	int parentBottom = p.getBottom();
+    	float newViewTop = viewTop + newTransY;
+    	float newViewBottom = viewBottom + newTransY;
+    	//checks if the view has reached the boundaries of its parent
+    	if((newViewBottom < parentBottom) && (newViewTop > parentTop)){
+    		reachedEdge = false;
+    	}
+		return reachedEdge;
+    }
+    
     private static void computeRenderOffset(View view, float pivotX, float pivotY) {
         if (view.getPivotX() == pivotX && view.getPivotY() == pivotY) {
             return;
